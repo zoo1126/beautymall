@@ -1,0 +1,28 @@
+@charset "UTF-8";
+* {
+	margin:0;
+	padding:0;	
+	box-sizing:border-box;
+}
+
+em,
+i{
+	front-style:normal
+}
+li{
+	list-style:none
+}
+img{
+	border:0;
+	vertical-align:middle
+}
+button{
+	border:0;
+	outline:none
+}
+
+
+a{
+	color:#666;
+	text-decoration:none
+}
