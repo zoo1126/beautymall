@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+     >
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script>
+	var url=location.href;
+	var num=url.indexOf("?");
+	if(num!=-1)
+		{
+			var res=url.substr(num+1);
+			if("fail"==res)
+				{
+					alert("密码或用户名错误！");
+				}
+			else if("ok"==res)
+				{
+				alert("注册成功！请登录");
+				}
+		}
+
+	</script>
+<title>登录</title>
+<link rel="stylesheet" href="css/base.css"></link>
+	<link rel="stylesheet" href="css/common.css"></link>
+</h:head>
+<h:body style="background-color:#ffe0de">
+<!-- 快捷导航 -->
+	<section class="shortcut">
+		<div class="w">
+			<div class="fl">
+				<ul>
+					<li>xx美妆商城管理系统&nbsp;</li>
+					<li><a href="../faces/shopping/man_login.xhtml" class="style_red">请登录</a></li>
+				</ul>
+			</div>
+			<div class="fr">
+				<ul>
+					<li><a href="http://localhost:8888/beautymall/shopping/index.jsp"  class="style_red">商城首页</a></li>
+					
+					
+				</ul>
+			</div>
+		</div>
+	</section>
+	
+		<!-- 头部模块 -->
+	<header class="header w">
+	<!-- logo -->
+		<div class="logo">
+			<h1>
+				<a href="http://localhost:8888/beautymall/shopping/index.jsp">商城</a>
+			</h1>
+		</div>
+	
+	
+	</header>
+<center>
+<br>
+
+</br>
+<div class="w">
+	<div class="log">
+<br>
+</br>
+<h1>管理员登录</h1>
+<br></br>
+
+	<h:form >
+	<h:panelGrid columns="3" cellpadding="60px" style="background:rgba(,,,0.5) padding:60px;" cellspacing="25px">
+			<h:outputLabel value="账号" style="font-size:20px" ></h:outputLabel>
+				<h:inputText id="userid"  value="#{userbean.userid}"  style="font-size:15px" required="true" requiredMessage="不能为空">
+				<f:validator validatorId="idvalidator"></f:validator>
+				</h:inputText>
+				<h:message for="userid"></h:message>
+				
+				
+				
+				<h:outputLabel value="密码" style="font-size:20px" ></h:outputLabel>
+				<h:inputSecret id="password" value="#{userbean.password}"   style="font-size:15px" required="true" requiredMessage="不能为空">
+				<f:validator validatorId="pwdvalidator"></f:validator>
+				</h:inputSecret>
+				<h:message for="password"></h:message>
+				
+			</h:panelGrid>
+			<br></br>
+			<h:commandButton value="登录" action="#{userbean.man_logincheck()}" style="font-size: large; width: 80px;  height: 40px"></h:commandButton>
+		</h:form>
+	</div>
+</div>
+</center>
+</h:body>
+</html>
