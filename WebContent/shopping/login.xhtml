@@ -10,24 +10,6 @@
 <title>登录</title>
 <link rel="stylesheet" href="css/base.css"></link>
 	<link rel="stylesheet" href="css/common.css"></link>
-	<script>
-	var url=location.href;
-	var num=url.indexOf("?");
-	if(num!=-1)
-		{
-			var res=url.substr(num+1);
-			if("fail"==res)
-				{
-					alert("密码或用户名错误！");
-				}
-			else if("ok"==res)
-				{
-					alert("注册成功！请登录！");
-				}
-			
-		}
-
-	</script>
 </h:head>
 <h:body style="background-color:#ffe0de">
 <!-- 快捷导航 -->
@@ -36,10 +18,25 @@
 			<div class="fl">
 				<ul>
 					<li>xx美妆商城欢迎您！&nbsp;</li>
-					<li><a href="../faces/shopping/login.xhtml" class="style_red">请登录</a>&nbsp;&nbsp;<a href="../faces/shopping/signin.xhtml" >立即注册</a></li>
+					<li><a href="../faces/shopping/login.xhtml" class="style_red">请登录</a>&nbsp;&nbsp;<a href="" >立即注册</a></li>
 				</ul>
 			</div>
-			
+			<div class="fr">
+				<ul>
+					<li><a href="http://localhost:8888/beautymall/shopping/index.html#"  class="style_red">首页</a></li>
+					<li></li>
+					<li><a href="">我的账号</a></li>
+					<li></li>
+					<li><a href="">购物车</a></li>
+					<li></li>
+					<li><a href="#">收藏夹</a></li>
+					<li></li>
+					<li><a href="">我的订单</a></li>
+					<li></li>
+					<li><a href="">联系客服</a></li>
+					
+				</ul>
+			</div>
 		</div>
 	</section>
 	
@@ -48,45 +45,44 @@
 	<!-- logo -->
 		<div class="logo">
 			<h1>
-				<a href="http://localhost:8888/beautymall/shopping/index.jsp">商城</a>
+				<a href="http://localhost:8888/beautymall/shopping/index.html#">商城</a>
 			</h1>
 		</div>
-	
-	
+	<!-- 搜索 -->
+	<div class="search">
+		<input type="search" name="" id="" style="border: 0; outline:none" placeholder="输入商品名称或关键字"></input>
+		<h:commandButton value="搜索" action="#" style="border: 0; outline:none ;float:right;width:80px;height:33px;background-color:#b1191a;font-size:16px;color:#fff;"></h:commandButton>
+		
+	</div>
+	<!-- 购物车 -->
+	<div class="shopcar"><img src="image/shopcar.png" width="35px" height="32px" style="float:left;background-color:#b1191a"></img><a href="">&nbsp;购物车&nbsp;<img src="image/toright.png" width="8px"></img></a>
+	</div>
 	</header>
 <center>
 <br>
-
 </br>
-<div class="w">
-	<div class="log">
 <br>
 </br>
 <h1>用户登录</h1>
 <br></br>
-
 	<h:form >
-	<h:panelGrid columns="3" cellpadding="60px" style="background:rgba(,,,0.5) padding:60px;" cellspacing="25px">
+	<h:panelGrid columns="3" cellpadding="20px" style="background:rgba(200,200,200,0.5)">
 			<h:outputLabel value="用户名" style="font-size:20px" ></h:outputLabel>
 				<h:inputText id="userid"  value="#{userbean.userid}"  style="font-size:15px" required="true" requiredMessage="不能为空">
 				
 				</h:inputText>
 				<h:message for="userid"></h:message>
 				
-				
-				
 				<h:outputLabel value="密码" style="font-size:20px" ></h:outputLabel>
 				<h:inputSecret id="password" value="#{userbean.password}"   style="font-size:15px" required="true" requiredMessage="不能为空">
-				<f:validator validatorId="pwdvalidator"></f:validator>
+				
 				</h:inputSecret>
 				<h:message for="password"></h:message>
 				
 			</h:panelGrid>
 			<br></br>
-			<h:commandButton value="登录" action="#{userbean.logincheck()}" style="font-size: large; width: 80px;  height: 40px"></h:commandButton>
+			<h:commandButton value="登录" action="true" style="font-size: large; width: 80px;  height: 40px"></h:commandButton>
 		</h:form>
-	</div>
-</div>
 </center>
 </h:body>
 </html>
